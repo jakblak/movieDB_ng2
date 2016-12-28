@@ -8,7 +8,7 @@ import { IShow } from './show';
 
 @Injectable()
 export class ShowService {
-  private _omdb = 'http://www.omdbapi.com/?t=';
+  private _omdb = 'http://www.omdbapi.com/?s=';
 
   constructor(private _http: Http) { }
 
@@ -17,16 +17,11 @@ export class ShowService {
   //     .map((response: Response) => <IShow[]>response.json())
   //     .catch(this.handleError);
   // }
-   schedule(): Observable<IShow[]> {
-    return this._http.get(this._omdb)
-      .map((response: Response) => <IShow[]>response.json())
-      .catch(this.handleError);
-  }
 
   searchBatman(query: string) {
     return this._http
         .get(`${this._omdb}/${query}`)
-        .map((response: Response) => <IShow[]>response.json())
+        .map((response: Response) => <IShow[]>response.json().Search)
         .do(data => console.log(data))
         .catch(this.handleError);
   }

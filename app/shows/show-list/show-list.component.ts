@@ -5,7 +5,8 @@ import { ShowService } from './../../models/show.service';
 @Component({
   moduleId: module.id,
   selector: 'mt-show-list',
-  templateUrl: 'show-list.component.html'
+  templateUrl: 'show-list.component.html',
+  styleUrls: ['styles.css']
 })
 
 export class ShowListComponent implements OnInit {
@@ -14,24 +15,17 @@ export class ShowListComponent implements OnInit {
   defaultSearch: string;
 
   constructor(private _showService: ShowService) {
-    this.defaultSearch = "Batman";
+    this.defaultSearch = "batman";
   }
 
   getBatman() {
     this._showService
     .searchBatman(this.defaultSearch)
     .subscribe(
-      shows => this.shows = shows,
-      error => this.errorMessage = <any>error
+      (shows: IShow[]) => this.shows = shows,
+      (error: string) => this.errorMessage = <any>error
       );
   }
-  // getShows() {
-  //   this._showService.schedule()
-  //     .subscribe(
-  //       shows => this.shows = shows,
-  //       error => this.errorMessage = <any>error
-  //       );
-  //     }
 
    ngOnInit() { this.getBatman(); }
 

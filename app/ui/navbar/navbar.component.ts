@@ -8,7 +8,7 @@ import { NavItem } from './navItems';
 })
 
 export class NavbarComponent {
-  appName: string = "TV Show Tracker";
+  appName: string = "Movie Tracker";
 
   navItems: NavItem[] = [
     {href: '#', label: 'Home', active: true},

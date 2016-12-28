@@ -11,6 +11,7 @@ import { ShowListComponent }   from './shows/show-list/show-list.component';
 
 import { ShowService }   from './models/show.service';
 import { TruncatePipe } from './shared/truncate.pipe';
+import { KeysPipe } from './shared/keys.pipe';
 
 @NgModule({
   imports:      [ BrowserModule,
@@ -20,7 +21,8 @@ import { TruncatePipe } from './shared/truncate.pipe';
                           NavbarComponent,
                           SearchComponent,
                           ShowListComponent,
-                          TruncatePipe ],
+                          TruncatePipe,
+                          KeysPipe ],
   providers: [ ShowService ],
   bootstrap:    [ AppComponent ]
 })
