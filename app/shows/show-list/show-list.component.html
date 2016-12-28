@@ -1,0 +1,89 @@
+<div class="container">
+<section class="filmes" id="filmes">
+    <h2>Featured Movies</h2>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6"
+            *ngFor="let show of shows">
+      <article class="card">
+        <header class="title-header">
+          <h3 class="card-title">Movie Title {{show.Title}}</h3>
+        </header>
+        <div class="card-block">
+          <div class="img-card">
+            <img [src]="show.Poster" alt="Movie" class="w-100" />
+          </div>
+          <p class="tagline card-text text-xs-center">{{show.Plot}}</p>
+          <a href="#" class="btn btn-primary btn-block"><i class="fa fa-eye"></i> Details</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <article class="card">
+        <header class="title-header">
+          <h3>Movie Title</h3>
+        </header>
+        <div class="card-block">
+          <div class="img-card">
+            <img src="https://placehold.it/300x250&text=Movie" alt="Movie" class="w-100" />
+          </div>
+          <p class="tagline card-text text-xs-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <a href="#" class="btn btn-primary btn-block"><i class="fa fa-eye"></i> Details</a>
+        </div>
+      </article>
+    </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+        <article class="card">
+        <header class="title-header">
+          <h3>Movie Title</h3>
+        </header>
+        <div class="card-block">
+          <div class="img-card">
+            <img src="https://placehold.it/300x250&text=Movie" alt="Movie" class="w-100" />
+          </div>
+          <p class="tagline card-text text-xs-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <a href="#" class="btn btn-primary btn-block"><i class="fa fa-eye"></i> Watch Now</a>
+        </div>
+      </article>
+    </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+        <article class="card">
+        <header class="title-header">
+          <h3>Movie Title</h3>
+        </header>
+        <div class="card-block">
+          <div class="img-card">
+            <img src="https://placehold.it/300x250&text=Movie" alt="Movie" class="w-100" />
+          </div>
+          <p class="tagline card-text text-xs-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <a href="#" class="btn btn-primary btn-block"><i class="fa fa-eye"></i> Watch Now</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+    <section id="shows">
+        <div class="row">
+          <div class="col-md-4"
+                  *ngFor="let show of shows; let i=index">
+            <div *ngIf="i<15">
+            <div class="thumbnail">
+              <img [src]="show.show.image.medium">
+              <div class="caption">
+                <h4><a href="{{show.url}}">{{show.show.name}}</a></h4>
+                <p><b>Network: </b>{{show.show.network.name}}</p>
+                <p><b>Premiered On: </b>{{show.show.premiered}}</p>
+                <p><b>Genres: </b> {{show.show.genres}}</p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
+</div>
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>

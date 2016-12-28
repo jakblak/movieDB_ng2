@@ -1,0 +1,20 @@
+<!-- Content -->
+<div id="welcome-products" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#welcome-products"
+        *ngFor="let slide of category; let first=first; let i=index"
+        [attr.data-slide-to]="i" [ngClass]="{active: first}"></li>
+  </ol>
+
+    <!-- Content -->
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item"
+      *ngFor="let slide of category; let first=first" [ngClass]="{active: first}">
+      <mt-carousel-image [slide]="slide"></mt-carousel-image>
+      </div>
+    </div>
+  </div>
+<mt-carousel-switch></mt-carousel-switch>
+

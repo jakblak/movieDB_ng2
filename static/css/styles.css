@@ -1,0 +1,27 @@
+.title-header {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+/*remove grey background from carousel*/
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+body {
+    margin:0;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.carousel {
+    margin-bottom: 12px;
+}
+
+.footer {
+    padding-top: 5px;
+    background-color: #f5f5f5;
+}
+
